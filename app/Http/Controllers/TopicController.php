@@ -10,7 +10,8 @@ class TopicController extends Controller
 {
     public function __construct()
     {
-        // only except
+        // only ใช้เฉพาะ
+        // except ยกเว้น
         $this->middleware('auth',['except' => ['index','show']]);
     }
     /**
@@ -66,10 +67,7 @@ class TopicController extends Controller
         $topic = Topic::find($id);
         $comments = $topic->comments;
         //dd($topic);
-        return view('content',[
-            'topic'=>$topic,
-            'comments'=>$comments
-        ]);
+        return view('content',['topic'=>$topic]);
     }
 
     /**
