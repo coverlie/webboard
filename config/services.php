@@ -40,4 +40,9 @@ return [
         ],
     ],
 
+    'facebook' => [
+        'client_id' => env('FB_KEY', '1026122604225888'),
+        'client_secret' => env('FB_SECRET', '77744d573a0f1a061e678295c75eb93a'),
+        'redirect' => 'http://localhost/http/webboard/public/login/facebook/callback',
+    ],
 ];

@@ -18,3 +18,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'TopicController@index');
 Route::resource('content', 'TopicController');
 Route::resource('comment', 'CommentController');
+
+Route::get('login/facebook', 'Auth\LoginController@redirectToFacebook');
+Route::get('login/facebook/callback', 'Auth\LoginController@handleFacebookCallback');
