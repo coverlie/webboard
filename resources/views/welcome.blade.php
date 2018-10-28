@@ -1,9 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class='container'>
-    <a class='btn btn-outline-primary' href='{{ route("content.create") }}'>
-        ตั้งกระทู้
-    </a>
+
     <div style='margin-top: 5px;'></div>
     <ul class="list-group">
         @foreach ($topic as $row)

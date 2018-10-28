@@ -16,11 +16,11 @@
                 @csrf
             <div class="form-group">
                 <label for="topic">หัวข้อ</label>
-                <textarea class="form-control" id="topic" rows="2" name='topic'></textarea>
+                <textarea class="form-control" id="topic" rows="2" name='topic' maxlength="190"></textarea>
             </div>
             <div class="form-group">
                 <label for="content">รายละเอียด</label>
-                <textarea class="form-control" id="content" rows="5" name='content'></textarea>
+                <textarea class="form-control" id="content" rows="5" name='content' maxlength="1000"></textarea>
             </div>
             <input type='hidden' name='user_id' value='{{ Auth::user()->id }}'>
             <input type='submit' value='โพสต์' class='btn btn-primary'>

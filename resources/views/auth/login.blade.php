@@ -63,7 +63,9 @@
                             </div>
                         </div>
                     </form>
-                    <a href='login/facebook'>Login FB</a>
+                    <center>
+                        <a href='login/facebook'><img src='{{ asset("images/loginfb.png") }}' ></a>
+                    </center>
                 </div>
             </div>
         </div>

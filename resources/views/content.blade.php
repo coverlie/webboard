@@ -70,7 +70,7 @@
                              @csrf
                         <div class="form-group">
                             <label for="content">แสดงความคิดเห็น</label>
-                            <textarea class="form-control" id="content" rows="5" name='comment'></textarea>
+                            <textarea class="form-control" id="content" rows="5" name='comment' maxlength="1000"></textarea>
                         </div>
                             <input type='hidden' name='user_id' value='{{ Auth::user()->id }}'>
                             <input type='hidden' name='topic_id' value='{{ $topic->id }}'>
