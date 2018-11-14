@@ -4,12 +4,17 @@
 
     <div style='margin-top: 5px;'></div>
     <ul class="list-group">
-        @foreach ($topic as $row)
+        @foreach ($topics as $row)
             <li class="list-group-item">
-                <a href='content/{{ $row->id }}'>{{ $row->topic }}</a>
+                <h3><a href='content/{{ $row->id }}'>{{ $row->topic }}</a></h3>
+                <p>โพสโดย : คุณ {{ $row->user->name }} <span>เมื่อ : {{ $row->created_at->diffForHumans() }}</span></p>
             </li>
+
         @endforeach
     </ul>
+
+    <div style='margin-top: 10px;'></div>
+    {{ $topics->links() }}
 </div>
 @endsection
 @section('js')

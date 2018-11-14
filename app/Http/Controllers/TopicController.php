@@ -21,8 +21,8 @@ class TopicController extends Controller
      */
     public function index()
     {
-        $topic = Topic::all();
-        return view('welcome',['topic' => $topic]);
+        $topics = Topic::orderBy('created_at', 'desc')->paginate(10);
+        return view('index',['topics' => $topics]);
     }
 
     /**
@@ -66,8 +66,8 @@ class TopicController extends Controller
     {
         $topic = Topic::find($id);
         $comments = $topic->comments;
-        //dd($topic);
-        return view('content',['topic'=>$topic]);
+        // dd($comments);
+        return view('content',['topic'=>$topic, 'comments'=>$comments]);
     }
 
     /**

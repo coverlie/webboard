@@ -1,10 +1,11 @@
 @extends('layouts.app')
 @section('content')
 <div class='container'>
+
     <div class="row justify-content-center">
         <div class='col-md-8 col-12'>
             <div class="card">
-                <div class="card-body">
+                <div class="card-header">
                     <h3>{{ $topic->topic }}</h3>
                 </div>
                 <div class="card-body">
@@ -25,7 +26,7 @@
         $i=1;
     @endphp
 
-    @foreach ($topic->comments as $comment)
+    @foreach ($comments as $comment)
     <div style='margin-top: 5px;'></div>
         <div class="row justify-content-center">
             <div class='col-md-8 col-12'>

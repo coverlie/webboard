@@ -29,7 +29,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -50,11 +50,11 @@ class LoginController extends Controller
     public function handleFacebookCallback()
     {
         $socialUser = Socialite::driver('facebook')->user();
-        //dd($socialUser);
+        // dd($socialUser);
         $type = 'facebook';
         $user = $this->createOrGetUser($socialUser, $type);
         Auth::login($user);
-        return redirect()->route('home');
+        return redirect()->route('index');
     }
 
     public function createOrGetUser($socialUser, $type)
@@ -72,7 +72,7 @@ class LoginController extends Controller
             }
             $user = new User();
             $user->name = $socialUser->name;
-            $user->password = Hash::make($socialUser->id . 'laravel');
+            $user->password = Hash::make($socialUser->id . rand(0,99999));
             $user->email = $email;
             $user->social_id = $socialUser->id;
             $user->save();
